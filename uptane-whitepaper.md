@@ -56,7 +56,7 @@ One of the strengths of Uptane is that it designed to work with existing systems
 ## **What does Uptane do differently?**
 Uptane takes a very realistic approach to software update strategies. As stated at the beginning of this paper, it acknowledges that compromise is not a matter of *if,* but of *when*. Hacks **will** occur and the best defense is a strategy that can isolate and limit exposure to attacks, and equally important, make it easier to recover from a compromise. The building blocks for this state rest on four design principles.
 
-- *Separation of trust:* distributing responsibility for the signing of metadata so if one signing key is compromised, it will not affect other users.
+- *Separation of trust:* distributing responsibility for the signing of metadata so if one signing key is compromised, it will not affect other parts of the system.
 - *Threshold signatures:* requiring that a fixed number of signatures must be gathered to attest to the authenticity of a file before the update can be downloaded.
 - *Explicit and implicit revocation of keys:* providing a mechanism for replacing compromised keys so malevolent parties can not continue signing metadata to authenticate malware, and ensuring that keys are not used forever.
 - *Keeping the most vulnerable keys offline:* mandating that certain signing keys be kept offline, thus making them harder to steal or compromise.
