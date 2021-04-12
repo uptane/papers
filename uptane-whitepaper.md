@@ -35,7 +35,7 @@ The types of attacks an automotive software security system needs to to defend a
 
 **Read updates:** The goal here is intellectual property theft, so these attackers aim to read the contents of software updates. This is generally achieved with an Eavesdrop attack, where attackers can read unencrypted updates sent from the repository to the vehicles.
 
-**Deny updates:** In this group of attacks, the goal is to deny access to updates so vehicles cannot fix software problems. These strategies include:
+**Deny updates:** In this group of attacks, the goal is to deny access to updates so vehicles cannot fix software problems, including newly discovered vulnerabilities. These strategies include:
 - *Drop-request attack:* blocks network traffic outside or inside the vehicle to prevent an ECU from receiving any updates.
 - *Slow retrieval attack:* slows delivery time of updates to ECUs so a known security vulnerability can be exploited before a corrective patch is received.
 - *Freeze attack:* continues to send the last known update to an ECU, even if a newer update exists.
