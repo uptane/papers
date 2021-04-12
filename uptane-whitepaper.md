@@ -51,7 +51,7 @@ The types of attacks an automotive software security system needs to to defend a
 
 While traditional signing strategies can be quite effective against these protect against some of these threats, they have a central weakness. If the central signing key is compromised, there are no checks to prevent an acceleration of damage throughout a vehicle, or perhaps every model of that vehicle. (PLEASE ADD MORE TO THIS)
 
-One of the strengths of Uptane is that it designed to work with existing systems rather than replacing such systemss. It's a hallmark of this approach that Uptane never fights against best practices, but rather expands and/or improves the best practices of highly resilient software.
+One of the strengths of Uptane is that it designed to work with existing systems rather than replacing such systems. It's a hallmark of this approach that Uptane never fights against best practices, but rather expands and/or improves the best practices of highly resilient software.
 
 ## **What does Uptane do differently?**
 Uptane takes a very realistic approach to software update strategies. As stated at the beginning of this paper, it acknowledges that compromise is not a matter of *if,* but of *when*. Hacks **will** occur and the best defense is a strategy that can isolate and limit exposure to attacks, and equally important, make it easier to recover from a compromise. The building blocks for this state rest on four design principles.
