@@ -45,7 +45,7 @@ The types of attacks an automotive software security system needs to to defend a
 - *Rollback attack:* tricks an ECU into installing outdated software with known vulnerabilities.
 - *Endless data attack:* causes an ECU to crash by sending it an infinite amount of data until it runs out of storage.
 - *Mixed-bundles attack:* shuts down an ECU by causing it to install incompatible versions of software updates that must not be installed at the same time. Attackers can accomplish this by showing different bundles to different ECUs at the same time.
-- *Mix-and-match attack:* If attackers have compromised repository keys, they can use these keys to release arbitrary combinations of new versions of images.
+- *Mix-and-match attack:*  causes an ECU to use arbitrary combinations of new versions of images.
 
 **Control:** The last and most severe threat is if an ECU can be forced to install software of the attacker’s choosing, thus ceding control of that unit. This means an attacker can arbitrarily modify the vehicle’s performance through an arbitrary software attack, in which the software on an ECU is overwritten with a malicious software program.
 
@@ -102,4 +102,3 @@ The white paper will address a number of issues, including the answers to the fo
 The best place to learn more about Uptane is to go to its [website](https://uptane.github.io/participate.html). Here you can read more on the specification, review the current version of the [Uptane Standard for Design and Implementation](https://uptane.github.io/papers/uptane-standard.1.1.0.html) and the [Deployment Best Practices](https://uptane.github.io/papers/uptane-deployment-best-practices-1.1.0.html) volume, as well as conference presentations, testing information, and other data. We welcome questions, feedback, and suggestions on these materials, the website or any other aspect of this project. Feel free to email feedback to jcappos@nyu.edu.
 
 Anyone in the automotive industry, open source community, or security community is welcome to join the Uptane Forum. This is a fairly low volume mailing list (a few messages a week) and is used to disseminate large news items, or to plan in person Uptane workshops. The Uptane standardization initiative is under the direction of the Uptane Alliance and is carried out on a mailing list specifically for this purpose. This mailing list is higher volume (often multiple messages a day) and is mainly meant to coordinate the standardization effort. To be added to this list, send an email to lad278@nyu.edu.
-
