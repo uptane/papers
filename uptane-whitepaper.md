@@ -1,4 +1,4 @@
-# **Uptane: A Realistic Approach to Securing Updates on Vulnerable Vehicles**
+# **Uptane: A Realistic Approach to Securing over-the-air Updates on Vulnerable Vehicles**
 
 ## **Table of Contents**
 
@@ -102,5 +102,4 @@ The white paper will address a number of issues, including the answers to the fo
 The best place to learn more about Uptane is to go to its [website](https://uptane.github.io/participate.html). Here you can read more on the specification, review the current version of the [Uptane Standard for Design and Implementation](https://uptane.github.io/papers/uptane-standard.1.1.0.html) and the [Deployment Best Practices](https://uptane.github.io/papers/uptane-deployment-best-practices-1.1.0.html) volume, as well as conference presentations, testing information, and other data. We welcome questions, feedback, and suggestions on these materials, the website or any other aspect of this project. Feel free to email feedback to jcappos@nyu.edu.
 
 Anyone in the automotive industry, open source community, or security community is welcome to join the Uptane Forum. This is a fairly low volume mailing list (a few messages a week) and is used to disseminate large news items, or to plan in person Uptane workshops. The Uptane standardization initiative is under the direction of the Uptane Alliance and is carried out on a mailing list specifically for this purpose. This mailing list is higher volume (often multiple messages a day) and is mainly meant to coordinate the standardization effort. To be added to this list, send an email to lad278@nyu.edu.
-
 
