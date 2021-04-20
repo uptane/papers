@@ -49,7 +49,9 @@ The types of attacks an automotive software security system needs to to defend a
 
 **Control:** The last and most severe threat is if an ECU can be forced to install software of the attacker’s choosing, thus ceding control of that unit. This means an attacker can arbitrarily modify the vehicle’s performance through an arbitrary software attack, in which the software on an ECU is overwritten with a malicious software program.
 
-While traditional signing strategies can be quite effective against these protect against some of these threats, they have a central weakness. If the central signing key is compromised, there are no checks to prevent an acceleration of damage throughout a vehicle, or perhaps every model of that vehicle. (PLEASE ADD MORE TO THIS)
+To prevent these attacks, a secure over-the-air update system must do more than sign the contents of updates. While a cryptographic signature provides some protection against an arbitrary software attack, this strategy alone is not enough to protect against the other attacks enumerated above. In addition, the signing key is a single point of failure for the system. If an attacker gets control of this key, they have full control of all updatable ECUs.
+
+Instead, over-the-air updates require a solution that addresses all of the above attacks, and is compromise resilient. With compromise resilience, a compromised repository or signing key is not sufficient to compromise the security of the entire system. In addition, compromise resilient systems have built in mechanisms to recover from a compromise.
 
 One of the strengths of Uptane is that it designed to work with existing systems rather than replacing such systems. It's a hallmark of this approach that Uptane never fights against best practices, but rather expands and/or improves the best practices of highly resilient software.
 
