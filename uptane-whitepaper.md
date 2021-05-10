@@ -86,6 +86,7 @@ Uptane is very much a living technology. Over the past three years, as it has st
 As vehicles edge ever closer to the designs envisioned in novels and movies in the mid-20th century, there will be new questions to address. Currently, the Uptane group is opening conversation on two such issues. Look for new whitepapers at the end of 2021 and in early 2022 to deal with the following issues.
 
 *Allowing access to ECUs for emergency updates from federal/state/local governments*
+
 As SOTA delivery of updates becomes more sophisticated, government agencies and regulatory bodies, such as the U.S. Department of Transportation or its state or local equivalents, the Department of Homeland Security, or the Federal Emergency Management Agency,  may require automakers to grant them full control over a vehicle in emergency situations. These infrequent but important OTA broadcasts could be due to emergency or disaster routing, scheduled road work, or traffic conditions due to closed exits, failed stoplights, or other conditions.  Accommodating this access will require some re-thinking of how Uptane is configured, particularly in how to prioritize delegations, and perhaps to accommodate a dual Director set-up.
 
 *Security issues related to the use of aftermarket materials*
