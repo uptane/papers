@@ -96,7 +96,7 @@ The white paper will address a number of issues, including the answers to the fo
 
 - How do we deal with aftermarket ECUs that do not have their own Primary? 
 - Can they leverage an OEMs Director repository?
-- If an aftermarket ECU does have its own Primary, is each capable of controlling a mutually exclusive set of ECU?
+- If an aftermarket ECU does have its own Primary, is each capable of controlling a mutually exclusive set of ECUs?
 - Could ownership of the Director be delegated to a third party or owner?
 
 ## **Learn More**
