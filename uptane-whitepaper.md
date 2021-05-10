@@ -1,10 +1,8 @@
 # **Uptane: A Realistic Approach to Securing over-the-air Updates on Vulnerable Vehicles**
 
-## **Table of Contents**
+### *The first in a series of Uptane Whitepapers*
 
-## **Executive Summary**
 
-*To be written after the contents is more or less set so we know what we're summarizing*
 
 ## **Compromise--Not If, But When**
 
@@ -21,7 +19,7 @@ This whitepaper describes Uptane, the first software update security system for 
 ## **Addressing the double-sided nature of software updates and why automobiles are so hard to secure** 
 Though not directed against automobiles, the recent [SolarWinds](https://en.wikipedia.org/wiki/SolarWinds) hack in which companies, government agencies, and academic institutions suffered significant data breaches after malware was slipped into a software update, is a sobering reminder that though updates are necessary, they are also always fraught with risk.  The [full impact](https://en.wikipedia.org/wiki/2020_United_States_federal_government_data_breach) of the attack, which is known to have affected computer systems within the U.S. Departments of Defense, State, Homeland Security, Treasury, Commerce, and Energy, is still to be tallied.
 
-Yet, ignoring updates is not a viable option either. As Uptane steering committee member Dr. Justin Cappos, associate professor of computer science and engineering, explained in a December 20 article in [Yahoo Finance](https://au.finance.yahoo.com/news/why-russias-massive-cyberattack-is-especially-insidious-222912267.html?__s=p54njaazgqic1gqfruk3), nation-state actors are gravitating to such attack targets because updating software is something system maintainers are “supposed to be doing.” In a sense, OEMs and suppliers find themselves between the proverbial rock and a hard place. But, even though updates are risky, he cautioned, ”If you don’t apply software updates, you’re absolutely, definitely vulnerable because old software is vulnerable software.”
+Yet, ignoring updates is not a viable option either. As Uptane steering committee member Dr. Justin Cappos, associate professor of computer science and engineering at NYU Tandon School of Engineering, explained in a December 20 article in [Yahoo Finance](https://au.finance.yahoo.com/news/why-russias-massive-cyberattack-is-especially-insidious-222912267.html?__s=p54njaazgqic1gqfruk3), nation-state actors are gravitating to such attack targets because updating software is something system maintainers are “supposed to be doing.” In a sense, OEMs and suppliers find themselves between the proverbial rock and a hard place. But, even though updates are risky, he cautioned, ”If you don’t apply software updates, you’re absolutely, definitely vulnerable because old software is vulnerable software.”
 
 For automotive OEMs,securing updates is much more complicated than for a conventional server based system, as the ECUs  must deal with limited memory, sometimes nonexistent storage, and the lack of a direct connection to the internet.
 
@@ -32,7 +30,7 @@ Unfortunately, connecting ECUs to the Internet make them vulnerable to a wide ra
 
 The types of attacks an automotive software security system needs to to defend against can be organized into four categories, presented here in order of increasing severity.
 
-**Read updates:** The goal here is intellectual property theft, so these attackers aim to read the contents of software updates. This is generally achieved with an eavesdropping attack, where attackers read unencrypted updates sent from the repository to the vehicles.
+**Read updates:** The goal here is intellectual property theft, so these attackers aim to read the contents of software updates. This is generally achieved with an eavesdropping attack, where attackers read unencrypted updates sent from the repository, or the server which contains relevant metadata about images, and sometimes the images themselves, to the vehicles.
 
 **Deny updates:** In this group of attacks, the goal is to deny access to updates so vehicles cannot fix software problems, including newly discovered vulnerabilities. These strategies include:
 - *Drop-request attack:* blocks network traffic outside or inside the vehicle to prevent an ECU from receiving any updates.
@@ -48,14 +46,12 @@ The types of attacks an automotive software security system needs to to defend a
 
 **Control:** The last and most severe threat is if an ECU can be forced to install software of the attacker’s choosing, thus ceding control of that unit. This means an attacker can arbitrarily modify the vehicle’s performance through an arbitrary software attack, in which the software on an ECU is overwritten with a malicious software program.
 
-To prevent these attacks, a secure over-the-air update system must do more than sign the contents of updates. While a cryptographic signature provides some protection against an arbitrary software attack, this strategy alone is not enough to protect against the other attacks enumerated above. In addition, the signing key is a single point of failure for the system. If an attacker gets control of this key, they have full control of all updatable ECUs.
+To prevent these attacks, a secure over-the-air update system must do more than sign the contents of updates. While a cryptographic signature provides some protection against an arbitrary software attack, this strategy alone is not enough to protect against the other attacks enumerated above. In addition, the signing key itself is a single point of failure for the system. If an attacker gets control of this key, they have full control of all updatable ECUs.
 
-Instead, over-the-air updates require a solution that addresses all of the above attacks and is compromise resilient. With compromise resilience, a compromised repository or signing key is not sufficient to compromise the security of the entire system. In addition, compromise resilient systems have built-in mechanisms to recover from a compromise.
-
-One of the strengths of Uptane is that it designed to work with existing systems rather than replacing such systems. It's a hallmark of this approach that Uptane never fights against best practices, but rather expands and/or improves the best practices of highly resilient software.
+Instead, over-the-air updates require a solution that addresses all of the above attacks and is also compromise resilient. With compromise resilience, accessing control of a repository or a signing key is not sufficient to compromise the security of the entire system. In addition, compromise resilient systems have built-in mechanisms to recover from a compromise.
 
 ## **What does Uptane do differently?**
-Uptane takes a very realistic approach to software update strategies. As stated at the beginning of this paper, it acknowledges that compromise is not a matter of *if,* but of *when*. Hacks **will** occur and the best defense is a strategy that can isolate and limit exposure to attacks, and equally important, make it easier to recover from a compromise. The building blocks for this state rest on four design principles.
+One of the strengths of Uptane is that it designed to work with existing systems rather than replacing such systems. It's a hallmark of this approach that Uptane never fights against best practices, but rather expands and/or improves the best practices of highly resilient software. It does this by adding a more realistic approach to it software update strategies. As stated at the beginning of this paper, Uptane acknowledges that compromise is not a matter of *if,* but of *when*. Hacks **will** occur and the best defense is a strategy that can isolate and limit exposure to attacks, and equally important, make it easier to recover from a compromise. The building blocks for this state rest on four design principles.
 
 - *Separation of trust:* distributing responsibility for the signing of metadata so if one signing key is compromised, it will not affect other parts of the system.
 - *Threshold signatures:* requiring that a fixed number of signatures must be gathered to attest to the authenticity of a file before the update can be downloaded.
@@ -67,7 +63,11 @@ These principles are extracted from an established security protocol called [The
 Another modification made to the basic TUF design has to do with the way Uptane verifies the images, meaning the media used to supply the code and data that control the actions of the ECUs. In the verification step, the ECU determines if a file is safe to download by checking its accompanying metadata. An ECU can be designed to use one of two different verification strategies, depending on its power. Full verification requires checking that the hashes and sizes of images in the signed metadata match the hashes and sizes stored on the Image repository, while partial verification requires only the signature on the Targets metadata file from the Director repository to be checked.
 
 ## **Basic Uptane Design** 
-This diagram illustrates how the checks and balances of this system works. The connected components on the right hand side of the diagram are on the vehicle, while the components on the left hand-side represent the repositories. The Image Repository can be thought of as an unchanging source of information about images. It is the keeper of every image currently deployed by the OEM, along with the metadata files that prove their authenticity. The Director Repository knows what software should be distributed to each ECU, given the current state of the repository. 
+
+<img align="left" src="assets/images/Uptane_process.png" width="500" style="margin: 0px 20px"/>
+
+
+The diagram above illustrates how the checks and balances of this system works. The connected components on the right hand side of the diagram are on the vehicle, while the components on the left hand-side represent the repositories. The Image Repository can be thought of as an unchanging source of information about images. It is the keeper of every image currently deployed by the OEM, along with the metadata files that prove their authenticity. The Director Repository knows what software should be distributed to each ECU, given the current state of the repository. 
 
 In the first step in the update process, the ECU sends its vehicle version manifest to the Director repository. The manifest contains signed information about existing images. Using this input, the Director chooses which images should be installed next. The metadata and images are then moved to the ECU, which will run a verification process. The diagram shows a Primary ECU connected to a number of Secondary ECUs. The Primary ECU downloads images and metadata from the repositories, then shares them with some number of Secondary ECUs on the same vehicle. ECUs are generally classified in terms of access to storage space, memory, a power supply, and a direct internet connection. The form of verification that will be run—full or partial— is also based on the resources of the ECU, as well as how security critical it may be. If the verification indicates no issues, the images can be downloaded to the ECU, and the vehicle version manifest will be updated.
 
@@ -104,4 +104,4 @@ The white paper will address a number of issues, including the answers to the fo
 ## **Learn More**
 The best place to learn more about Uptane is to go to its [website](https://uptane.github.io/participate.html). Here you can read more on the specification, review the current version of the [Uptane Standard for Design and Implementation](https://uptane.github.io/papers/uptane-standard.1.1.0.html) and the [Deployment Best Practices](https://uptane.github.io/papers/uptane-deployment-best-practices-1.1.0.html) volume, as well as conference presentations, testing information, and other data. We welcome questions, feedback, and suggestions on these materials, the website, or any other aspect of this project. Feel free to raise issues on GitHub or email feedback to jcappos@nyu.edu.
 
-Anyone in the automotive industry, open source community, or security community is welcome to join the Uptane Forum. This is a fairly low volume mailing list (a few messages a week) and is used to disseminate large news items, or to plan in-person Uptane workshops. The Uptane standardization initiative is under the direction of the Uptane Alliance and is carried out on a mailing list specifically for this purpose. This mailing list is higher volume (often multiple messages a day) and is mainly meant to coordinate the standardization effort. To be added to either list, send an email to lad278@nyu.edu.
+Anyone in the automotive industry, open source community, or security community is welcome to join the Uptane Forum. This is a fairly low volume mailing list  and is used to disseminate large news items, or to plan in-person Uptane workshops. The Uptane standardization initiative is under the direction of the Uptane Standards group and is carried out on a mailing list specifically for this purpose. This mailing list is mainly meant to coordinate the standardization effort. To be added to either list, send an email to lad278@nyu.edu.
