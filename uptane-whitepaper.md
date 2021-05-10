@@ -38,7 +38,7 @@ The types of attacks an automotive software security system needs to to defend a
 - *Drop-request attack:* blocks network traffic outside or inside the vehicle to prevent an ECU from receiving any updates.
 - *Slow retrieval attack:* slows delivery time of updates to ECUs so a known security vulnerability can be exploited before a corrective patch is received.
 - *Freeze attack:* continues to send the last known update to an ECU, even if a newer update exists.
-- *Partial bundle installation attack:* Allows only part of an update to install by dropping traffic to selected ECUs.
+- *Partial bundle installation attack:* allows only part of an update to install by dropping traffic to selected ECUs.
 
 **Deny functionality:** This grouping ups the threat ante a bit further by causing vehicles to fail to function in one of the following ways:
 - *Rollback attack:* tricks an ECU into installing outdated software with known vulnerabilities.
