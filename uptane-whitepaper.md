@@ -32,7 +32,7 @@ Unfortunately, connecting ECUs to the Internet make them vulnerable to a wide ra
 
 The types of attacks an automotive software security system needs to to defend against can be organized into four categories, presented here in order of increasing severity.
 
-**Read updates:** The goal here is intellectual property theft, so these attackers aim to read the contents of software updates. This is generally achieved with an Eavesdrop attack, where attackers can read unencrypted updates sent from the repository to the vehicles.
+**Read updates:** The goal here is intellectual property theft, so these attackers aim to read the contents of software updates. This is generally achieved with an eavesdropping attack, where attackers read unencrypted updates sent from the repository to the vehicles.
 
 **Deny updates:** In this group of attacks, the goal is to deny access to updates so vehicles cannot fix software problems, including newly discovered vulnerabilities. These strategies include:
 - *Drop-request attack:* blocks network traffic outside or inside the vehicle to prevent an ECU from receiving any updates.
