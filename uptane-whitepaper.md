@@ -42,7 +42,8 @@ The types of attacks an automotive software security system needs to to defend a
 - *Rollback attack:* tricks an ECU into installing outdated software with known vulnerabilities.
 - *Endless data attack:* causes an ECU to crash by sending it an infinite amount of data until it runs out of storage.
 - *Mixed-bundles attack:* shuts down an ECU by causing it to install incompatible versions of software updates that must not be installed at the same time. Attackers can accomplish this by showing different bundles to different ECUs at the same time.
-- *Mix-and-match attack:*  causes an ECU to use arbitrary combinations of new versions of images.
+- *Mix-and-match attack:*  Like the mixed-bundles attack described above, this attack also causes ECUs
+to use arbitrary combinations of new versions of images. However, it is a more serious threat as the ability to initiate it means attackers have abused repository keys to sign this bundle, and the updates provided can be completely arbitrary.
 
 **Control:** The last and most severe threat is if an ECU can be forced to install software of the attacker’s choosing, thus ceding control of that unit. This means an attacker can arbitrarily modify the vehicle’s performance through an arbitrary software attack, in which the software on an ECU is overwritten with a malicious software program.
 
