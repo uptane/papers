@@ -6,7 +6,7 @@
 
 ## **Compromise--Not If, But When**
 
-In 1953, author Isaac Asimov wrote a short story called [“Sally”]( https://en.wikipedia.org/wiki/Sally_(short_story). Set in 2057, it was built on the premise that cars by that time would not only be self-driving, but also sentient. And, typical of mid 20th century science fiction, the story hinted that helpful and appealing technology carried with it a certain amount of risk. 
+In 1953, author Isaac Asimov wrote a short story called [*Sally*](https://en.wikipedia.org/wiki/Sally_(short_story)). Set in 2057, it was built on the premise that cars by that time would not only be self-driving, but also sentient. And, typical of mid 20th century science fiction, the story hinted that helpful and appealing technology carried with it a certain amount of risk. 
 
 In the 68 years since Asimov wrote the story cited above, cars may not have become sentient, but they have certainly grown quite smart.  The increasing number of smart programmable units on today’s cars, called electronic control units, or ECUs, has created a large and complex code base that is quite likely to contain programming errors. Coupled with the fact that today's cars support a multitude of wireless communication interfaces, it has become much too easy for these flaws to be exploited remotely. Furthermore, the distributed manner in which software is developed in the automotive industry, which involves numerous suppliers in a complicated supply chain, offers numerous opportunities for hackers to insert malware or to plan other types of attacks.
 
@@ -64,8 +64,6 @@ These principles are extracted from an established protocol called [The Update F
 Another modification made to the basic TUF design has to do with the way Uptane verifies updates. In the verification step, the ECU determines if a file is safe to download by checking its accompanying metadata. An ECU can be designed to use one of two different verification strategies, depending on its power. Full verification requires checking that the hashes and sizes of updates in the signed metadata match the hashes and sizes stored on the Image repository, while partial verification requires only a check of the signature on the Targets metadata file from the Director repository.
 
 ## **Basic Uptane Design** 
-
-<img align="left" src="papers/images/Uptane_process.png" width="500" style="margin: 0px 20px"/>
 
 
 The diagram above illustrates how the checks and balances of this system works. The connected components on the right hand side of the diagram are on the vehicle, while the components on the left hand-side represent the repositories. The Image Repository can be thought of as an unchanging source of information about images. It is the keeper of every image currently deployed by the OEM, along with the metadata files that prove their authenticity. The Director Repository knows what software should be distributed to each ECU, given the current state of the repository. 
