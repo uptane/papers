@@ -65,8 +65,11 @@ Another modification made to the basic TUF design has to do with the way Uptane 
 
 ## **Basic Uptane Design** 
 
+<img align="left" src="papers/images/Uptane_process.png" width="500" style="margin: 0px 20px"/>
 
-The diagram above illustrates how the checks and balances of this system works. The connected components on the right hand side of the diagram are on the vehicle, while the components on the left hand-side represent the repositories. The Image Repository can be thought of as an unchanging source of information about images. It is the keeper of every image currently deployed by the OEM, along with the metadata files that prove their authenticity. The Director Repository knows what software should be distributed to each ECU, given the current state of the repository. 
+
+
+The diagram above illustrates how the checks and balances of the system works. The connected components on the right hand side of the diagram are on the vehicle, while the components on the left hand-side represent the repositories. The Image Repository can be thought of as an unchanging source of information about images. It is the keeper of every image currently deployed by the OEM, along with the metadata files that prove their authenticity. The Director Repository knows what software should be distributed to each ECU, given the current state of the repository. 
 
 In the first step in the update process, the ECU sends its vehicle version manifest to the Director repository. The manifest contains signed information about existing images. Using this input, the Director chooses which images should be installed next. The metadata and images are then moved to the ECU, which will run a verification process. The diagram shows a Primary ECU connected to a number of Secondary ECUs. The Primary ECU downloads images and metadata from the repositories, then shares them with some number of Secondary ECUs on the same vehicle. ECUs are generally classified in terms of access to storage space, memory, a power supply, and a direct Internet connection. The form of verification that will be run—full or partial—is also based on the resources of the ECU, as well as how security critical it may be. If the verification indicates no issues, the image can be flashed to the ECU, and the vehicle version manifest will be updated.
 
