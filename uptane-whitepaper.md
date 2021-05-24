@@ -1,4 +1,4 @@
-# **Uptane: A Realistic Approach to Securing over-the-air Updates on Vulnerable Vehicles**
+# **Uptane: Secure, efficient delivery of over-the-air software updates for ground vehicles**
 
 ### *The first in a series of Uptane Whitepapers*
 
