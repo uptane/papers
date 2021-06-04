@@ -65,7 +65,7 @@ Another modification made to the basic TUF design has to do with the way Uptane 
 
 ## **Basic Uptane Design** 
 
-<img align="left" src="papers/images/Uptane_process.png" width="500" style="margin: 0px 20px"/>
+<img align="left" src="papers/blob/master/images/Uptane_process.png" width="500" style="margin: 0px 20px"/>
 
 
 
