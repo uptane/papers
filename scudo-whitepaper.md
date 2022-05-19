@@ -1,4 +1,4 @@
-![](images/cover-format.svg)
+![](images/scudo-cover.png)
 
 <div style="page-break-after: always;"></div>
 
