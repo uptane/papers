@@ -21,6 +21,8 @@
       * [SLSA](#slsa)
    * [Conclusions and Future Work](#conclusions-and-future-work)
 
+<div style="page-break-after: always;"></div>
+
 ## Executive Summary
 
 In the light of the 2020 SolarWinds attack and the identification of potential supply chain vulnerabilities ripe for exploitation, such as [log4j](https://news.yahoo.com/log4j-why-this-massive-security-flaw-impacting-nearly-all-the-internet-222332341.html), companies across all industry sectors have turned their attention to software supply chain security. The need to find solutions quickly is further fueled by rapidly increasing regulations and standards, including President Biden’s U.S.Executive Order 14028. Issued in the spring of 2021, it explicitly calls for improvements in the development, testing, and distribution of software.
@@ -32,6 +34,8 @@ There are a number of open source strategies for securing software supply chains
 In this paper, we propose one such solution, Scudo. Scudo combines the compromise resilience and secure delivery protection of the Uptane software update system, with the end-to-end supply chain security offered by in-toto. Uptane has been a component in secure software update systems used by a number of OEMs for the past five years. On the other hand, in-toto is new to the automotive space but has seen significant adoptions by companies such as [Datadog](https://www.datadoghq.com/blog/engineering/secure-publication-of-datadog-agent-integrations-with-tuf-and-in-toto/) in 2018, as well as by open source efforts such as Sigstore, Grafeas, and Reproducible Builds. SolarWinds itself adopted in-toto as part of its recovery from the attack in 2019-20. in-toto is also a core part of SLSA, the industry’s leading software supply chain best practices framework.
 
 This whitepaper introduces Scudo on a high level. A more formal specification will be published as a [Proposed Uptane Revisions and Enhancements (PURE)](https://github.com/uptane/pures/blob/main/pure1.md). The PURE, which is a formal mechanism for proposing changes to the Uptane Standard, will also consider the unique needs of the automotive industry with respect to the challenges these needs may pose to validating software supply chains. It will also present example scenarios using existing, mature in-toto implementations to help OEMs bootstrap the framework for their supply chains.
+
+<div style="page-break-after: always;"></div>
 
 ## Introduction
 
