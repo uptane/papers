@@ -20,6 +20,7 @@
       * [ISO DIS 24089](#iso-dis-24089)
       * [SLSA](#slsa)
    * [Conclusions and Future Work](#conclusions-and-future-work)
+   * [References](#references)
 
 <div style="page-break-after: always;"></div>
 
