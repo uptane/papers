@@ -1,3 +1,7 @@
+![](images/cover-format.svg)
+
+<div style="page-break-after: always;"></div>
+
 ## Table of Contents
 
    * [Executive Summary](#executive-summary)
