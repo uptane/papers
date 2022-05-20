@@ -91,7 +91,8 @@ Most of these scenarios stem from the aforementioned decentralized nature of aut
 As Scudo is an extension of Uptane, the [attack scenarios pertaining to Uptane alone](https://uptane.github.io/attacks.html) are also defended against.
 
 *Out of scope:*
-- **Drop-request attack,** in which network traffic outside or inside the vehicle is blocked to prevent an ECU from receiving any updates. Though Scudo does not directly address this, users will be notified if this attack is detected.
+
+- **Drop-request attack**, in which network traffic outside or inside the vehicle is blocked to prevent an ECU from receiving any updates. Though Scudo does not directly address this, users will be notified if this attack is detected.
 - **Denial of Service attack**, which prevent a vehicle from installing updates by blocking the vehicle connection to the internet or one or more update servers. Scudo will detect this attack and report it to users.
 - **Physical access to the vehicle**, which could allow an attacker to tamper with or replace the hardware on which software is running.
 - **Compromise of a threshold** of Uptane and in-toto root keys, though Scudo’s design reduces the likelihood of such a compromise through the use of thresholds and offline keys.
