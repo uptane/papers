@@ -21,6 +21,7 @@
       * [SLSA](#slsa)
    * [Conclusions and Future Work](#conclusions-and-future-work)
    * [References](#references)
+   * [Change History](#change-history)
 
 <div style="page-break-after: always;"></div>
 
@@ -291,3 +292,18 @@ This document presents a high level architecture for Scudo. A more formal specif
 * Wakelin, Nicole. "How Many Parts are in a Car?," Napa online.com. https://knowhow.napaonline.com/how-many-parts-are-in-a-car/. 2 July 2021. Accessed 19 May 2022.
 * The White House. *Executive Order 14028 on Improving the Nation’s Cybersecurity.* https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/. 12 May 2021. Accessed 19 May 2022.
 * "Why Uptane is needed." Uptane.io. https://uptane.github.io/attacks.html. Accessed 19 May 2022.
+
+## Change History
+
+As this whitepaper is intended to be a living document, some changes are expected from time to time. We record them here, using the dates of release of each update as checkpoints.
+
+### July 13, 2022
+
+* Expanded the division of responsibilities among ECUs for in-toto verification when Scudo is used
+* Replaced diagrams
+* Clarified in-toto metadata generation and how it maps to SLSA compliance
+* Clarified number of components in cars in terms of the number of ECUs they have
+
+### May 23, 2022
+
+* Initial version of the whitepaper
